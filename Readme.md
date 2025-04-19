@@ -1,138 +1,171 @@
-# Track&Trust - Prototype logistics system
+# Track&Trust – Prototype Logistics System
 
 **Track & Trust: Where Packages Find Their Way, Every Step of the Journey!**
 
-## Problem Statement
+A full-stack logistics tracking system designed to solve trust issues between customers and delivery agents, minimize parcel loss, and handle unclaimed parcels through real-time geolocation and geofencing technologies.
 
-Customers face challenges in tracking packages, leading to package loss and trust issues within the supply chain. Additionally, issues arise when customers fail to pick up parcels even after two delivery attempts.
+> 🚀 This is a forked version of a collaborative project.  
+> I contributed to backend API optimization with NestJS and Prisma, real-time geofencing logic, frontend route integration, and UI enhancements for the tracking and delivery flow.
 
-### Identified Sub-problems:
+---
 
-1. **Tracking package due to loss**
-2. **Trust Issues between Customers and Delivery Personnel**
-3. **Unclaimed parcels after 2 delivery attempts**
+## 🧩 Problem Statement
 
-## Location Tracking Law - UK/Canada
+Customers often face challenges in tracking packages, which leads to:
 
-In both the United Kingdom and Canada, location tracking for employee monitoring falls under the regulations of the GDPR and the Personal Information Protection and Electronic Documents Act, respectively. Key points include:
+1. **Package loss**
+2. **Trust issues with delivery personnel**
+3. **Unclaimed parcels after failed delivery attempts**
 
-- **United Kingdom (GDPR):** Location tracking is considered employee monitoring, requiring employee consent and ensuring unrestricted access to private data. Organizations must adhere to GDPR guidelines, including transparency about tracked data, having a legal basis for processing employee information, and using it in a way that benefits staff.
-- **Canada (PIPEDA):** Monitoring regulations emphasize the importance of employee consent and informed policy disclosure.
+---
 
-## Product Features
+## ⚖️ Legal Compliance – Location Tracking in UK & Canada
 
-- **Real-time Tracking:**
+### 🇬🇧 United Kingdom (GDPR)
 
-  - Our MVP shows the last updated location for the package, helping inventory managers track the status of packages.
-  - Real-time tracking via Google Maps is supported.
+- Location tracking = employee monitoring
+- Requires **consent**, **transparency**, and **purpose limitation**
 
-- **Geofencing:**
+### 🇨🇦 Canada (PIPEDA)
 
-  - Location-based technology that creates virtual boundaries around geographic areas, triggering specific actions when a device enters or exits these boundaries.
-  - Commonly used for marketing, asset tracking, and security applications.
+- Tracking must include **policy disclosure** and **employee consent**
 
-- **Unclaimed Parcels Solution:**
-  - After two delivery attempts, parcels are sent to a facility.
-  - Customers can select a specific date and time for delivery according to their convenience.
+---
 
-## Project Breakdown
+## 🚀 Key Features
 
-### Problem: Tracking Packages Due to Loss
+- **📍 Real-Time Package Tracking**
 
-- **Research & Solution:**
-  - Research identified a real-time tracking solution that scans products at every stop, updating locations conveniently.
-- **Tasks Identified:**
-  - **Database Handling**
-  - **Backend Development**
-  - **Frontend/UI Development**
-  - **Integration**
+  - Last scanned location and live tracking via Google Maps
 
-### Problem: Trust Issues Between Customers and Delivery Personnel
+- **🛑 Geofencing**
 
-- **Research & Solution:**
-  - Research led to the adoption of geofencing to track delivery personnel within a specified radius of the customer's home.
-  - Real-time notifications are provided when delivery partners are in proximity.
-- **Tasks Identified:**
-  - **Geofencing Integration**
+  - Virtual delivery radius around a customer’s home
+  - Notifies both customer and agent when entering the zone
 
-### Problem: Unclaimed Parcels After 2 Delivery Attempts
+- **📦 Unclaimed Parcel Handling**
+  - After 2 failed attempts, customers reschedule delivery from the parcel facility
 
-- **Solution:**
-  - The parcel is sent to a facility, and the customer is given the option to select a delivery time at their convenience.
-- **Tasks Identified:**
-  - **Backend Development**
-  - **Login/Signup Page**
-  - **Role-Based Management**
+---
 
-## Getting Started
+## 🔧 Project Breakdown & Tasks
 
-### Prerequisites
+### 📦 Issue: Package Loss
 
-- **Node.js:** Make sure Node.js is installed on your system.
-  - Download and install from: [Node.js Official Website](https://nodejs.org/en)
+- ✅ Real-time scan tracking
+- ✅ Inventory updates
+- ✅ Location trace history
 
-### Installation
+### 🧍 Issue: Customer-Delivery Trust
 
-#### Clone the Repository
+- ✅ Geofence triggers
+- ✅ Proximity notifications
+
+### 🕒 Issue: Unclaimed Deliveries
+
+- ✅ User-based delivery scheduling
+- ✅ Role-based parcel facility management
+
+---
+
+## 🛠️ Tech Stack
+
+| Area          | Tech Used                                   |
+| ------------- | ------------------------------------------- |
+| **Frontend**  | React.js, JavaScript, SCSS, Google Maps API |
+| **Backend**   | NestJS, TypeScript, Prisma ORM, PostgreSQL  |
+| **Cloud/Dev** | Node.js, npm, REST APIs, Geofencing logic   |
+
+---
+
+## 📁 Folder Structure
 
 ```bash
-git clone https://github.com/Vrutik21/TrustNTrack.git
+TrackNTrust/
+├── Backend/         # NestJS backend with Prisma
+│   ├── src/
+│   ├── prisma/
+│   └── ...
+├── Frontend/        # React frontend
+│   ├── src/
+│   └── ...
+└── README.md
 ```
 
-#### Backend Setup
+---
 
-1. Navigate to the Backend directory:
+## ⚙️ Getting Started
+
+### 🔄 Clone the Repository
+
+```bash
+git clone https://github.com/meetbhavsar99/TrackNTrust.git
+cd TrackNTrust
+```
+
+---
+
+### 🧠 Backend Setup
 
 ```bash
 cd Backend
-```
-
-2. Install the required dependencies:
-
-```bash
 npm install
 ```
 
-3. If there is any database migration error, run prisma commands:
+Run Prisma migration commands if needed:
 
 ```bash
 npm run migrate
 npm run generate
 ```
 
-4. To run the backend server:
+Then start the backend:
 
 ```bash
 npm run start:dev
 ```
 
-### Frontend Setup:
+---
 
-1. Navigate to the Frontend directory:
-
-```bash
-cd Frontend
-```
-
-2. Install the required dependencies:
+### 🎨 Frontend Setup
 
 ```bash
+cd ../Frontend
 npm install
-```
-
-3. To run the fronend server:
-
-```bash
 npm run start
 ```
 
-Open `http://localhost:3000` to view it in your browser.
+Access at: [http://localhost:3000](http://localhost:3000)
 
-## Project Structure
+---
 
-- **Backend**: Contains the Nest.js application.
-- **Frontend**: Contains the React.js application.
+## 📚 Project Submission
 
-## Project Submission
+This project was submitted for the **COMP-8117: Advanced Software Engineering** course in **Winter 2024**.  
+It was also demonstrated during the semester’s scheduled project showcase.
 
-### This project is submitted as part of the COMP-8117:Advanced Software Engineering course for the Winter 2024 session. It involves demonstrating the project during a scheduled slot.
+---
+
+## 🙌 Acknowledgment
+
+This project was initially built as part of a group collaboration.  
+I contributed to:
+
+- 🛠️ Backend logic for geofencing & delivery scheduling (NestJS)
+- 🎯 Optimizing Prisma-based queries and schema
+- 🖥️ UI flow integration and dashboard improvements
+- 📦 REST API endpoints for parcel tracking and delivery logic
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 📫 Contact
+
+**Meet Bhavsar**  
+📧 [meetbhavsar99@gmail.com](mailto:meetbhavsar99@gmail.com)  
+💼 [LinkedIn](https://www.linkedin.com/in/meet-bhavsar-0059ba1b5/)
